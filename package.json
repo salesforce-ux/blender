@@ -1,5 +1,5 @@
 {
-  "name": "vendetta",
+  "name": "blender",
   "version": "0.0.1",
   "description": "SVG 2 PNG asset conversion.",
   "keywords": [
@@ -8,16 +8,16 @@
   ],
   "author": "Salesforce UX",
   "license": "BSD 2-Clause",
-  "main": "./lib/vendetta",
+  "main": "./lib/blender",
   "bin": {
-    "theo": "./bin/vendetta"
+    "theo": "./bin/blender"
   },
   "engines": {
     "node": "0.10.21"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/salesforce-ux/vendetta.git"
+    "url": "https://github.com/salesforce-ux/blender.git"
   },
   "dependencies": {
     
