@@ -112,7 +112,7 @@ formats: { name, *ignoreTypeSuffix, sizes }
 
 name: e.g. ios
 ignoreSuffixType: (default: false) if true, output icon names will not include typeSuffix
-sizes: { *scale, *constant, *suffix, *sizeDirectory }
+</br>sizes: { *scale, *constant, *suffix, *sizeDirectory }
 
 scale: (default: 1) scale of output image, 
 
