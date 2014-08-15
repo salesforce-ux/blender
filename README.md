@@ -111,8 +111,8 @@ config: { formats, iconTypes: iconTypes }
 formats: { name, *ignoreTypeSuffix, sizes }
 
 name: e.g. ios
-ignoreSuffixType: (default: false) if true, output icon names will not include typeSuffix
-</br>sizes: { *scale, *constant, *suffix, *sizeDirectory }
+ignoreSuffixType: (default: false) if true, output icon names will not include typeSuffix <br/ >  
+sizes: { *scale, *constant, *suffix, *sizeDirectory }
 
 scale: (default: 1) scale of output image, 
 
