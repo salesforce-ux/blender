@@ -106,15 +106,16 @@ This will create the following icons and folder structure:
 
 ###About the config JSON object:
 
-config: {formats: [array_of_formats], iconTypes: [array_of_icon_types]}
+config: { formats, iconTypes: iconTypes }
 
-formats:
--- name: name of format (e.g. ios)
--- * ignoreTypeSuffix: default: false; if true, output icon names will not include typeSuffix
--- sizes: [
-------------- * sizeDirectory: name of size directory (e.g. mdpi)
-------------- * scale: default: 1; scale of output image ()
---        ]
+formats: { name, *ignoreTypeSuffix, sizes }
+
+name: e.g. ios
+ignoreSuffixType: (default: false) if true, output icon names will not include typeSuffix
+sizes: { *scale, *constant, *suffix, *sizeDirectory }
+
+scale: (default: 1) scale of output image, 
+
 
 
 
