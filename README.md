@@ -21,6 +21,8 @@ To convert assets:
 
 	$ npm install blender --save-dev
 
+Example:
+
 	blender = require 'blender'
 
 	var config = { 
@@ -59,6 +61,50 @@ To convert assets:
 	}
 
 	blender("./output", config);
+
+This will create the following icons and folder structure:
+
+--output
+----android
+----|---utility
+----|---|---mdpi
+----|---|---|---icon_U.png
+----|---|---hdpi
+----|---|---|---icon_U.png
+----|---doctype
+----|---|---mdpi
+----|---|---|---icon_D.png
+----|---|---hdpi
+----|---|---|---icon_D.png
+----|---custom
+----|---|---mdpi
+----|---|---|---icon_list_C.png
+----|---|---|---icon_anchor_C.png
+			--mdpi
+----|---|---|---icon_list_C.png
+----|---|---|---icon_anchor_C.png
+	--ios
+		--utility
+			icon_U.png
+			icon_U@2x.png
+		--doctype
+			icon_D.png
+			icon_D@2x.png
+		--custom
+			icon_list_C.png
+			icon_anchor_C.png
+			icon_list_C@2x.png
+			icon_anchor_C@2x.png
+	--api
+		--utility
+			icon_U_60.png
+			icon_U_120.png
+		--doctype
+			icon_D_60.png
+			icon_D_120.png
+		--custom
+
+
 
 
 ## License
