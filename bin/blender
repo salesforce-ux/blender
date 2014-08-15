@@ -24,5 +24,11 @@ var lib = require(lib + '/blender.js');
 if(process.argv.length !== 4){
   	console.error('blender needs 2 parameters: destDir, config');
 }else{
-	lib.blender(process.argv[2], process.argv[3])
+	var raw = fs.readFileSync(process.argv[3]);
+
+	var config = JSON.parse(raw);
+
+	console.log(config);
+
+	lib.blender(process.argv[2], config);
 }

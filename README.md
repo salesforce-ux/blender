@@ -1,6 +1,66 @@
 blender
 ========
 
+A tool for converting media assets from svg format to png format in a specified array of sizes. This module is perfect for genreating icons to be used on a variety of screen sizes. Output folder structure, output sizes, icon types, and output icon names can be configured via a JSON object input.
+
+## Usage
+
+You can use _blender_ either via command line or as a node library.
+
+### Command line
+
+	npm install -g blender
+
+	ulimit -n 2048
+
+To convert assets:
+
+	blender ./path_to_output_folder ./relative_path_to_config.json
+
+### Library
+
+	$ npm install blender --save-dev
+
+	blender = require 'blender'
+
+	var config = { 
+	  "formats": [
+	    {
+	      "name": "android",
+	      "sizes": [
+	        { "sizeDirectory" : "mdpi", "scale": 1 },
+	        { "sizeDirectory" : "hdpi",   "scale": 1.5 }
+	      ], 
+	      "ignoreTypeSuffix": false
+	    },
+	    {
+	      "name": "ios",
+	      "sizes": [
+	        { "scale": 1 },
+	        { "scale": 2, "suffix": "@2x" }
+	      ],
+	      "ignoreTypeSuffix": false
+	    },
+	    {
+	      "name": "api",
+	      "sizes": [
+	        { "constant": 60, "suffix": "_60" },
+	        { "constant": 120, "suffix": "_120"}
+	      ], 
+	      "ignoreTypeSuffix": true
+	    }
+	  ],
+	  "iconTypes": [
+	    { "name": "utility",   "unitSize": 18, "longestDimension": 64,  "src": "./test/icons/utility"},
+	    { "name": "doctype",   "unitSize": 18, "longestDimension": 64,  "src": "./test/icons/doctype"},
+	    { "name": "custom",    "suffix": "_anchor",  "unitSize": 48, "longestDimension": 120, "src": "./test/icons/custom"},
+	    { "name": "custom",    "suffix": "_list",    "unitSize": 32, "longestDimension": 120, "src": "./test/icons/custom"},
+	  ]
+	}
+
+	blender("./output", config);
+
+
 ## License
 
 Copyright (c) 2014, salesforce.com, inc. All rights reserved.
