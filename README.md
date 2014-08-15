@@ -112,19 +112,19 @@ config: { formats, iconTypes }
 
 formats: { name, *ignoreTypeSuffix, sizes }
 
---- name: e.g. ios
+-------- name: e.g. ios
 
---- ignoreSuffixType: (default: false) if true, output icon names will not include typeSuffix
+-------- ignoreSuffixType: (default: false) if true, output icon names will not include typeSuffix
 
---- sizes: { *scale, *constant, *suffix, *sizeDirectory }
+-------- sizes: { *scale, *constant, *suffix, *sizeDirectory }
 
----|-- scale: (default: 1) scale of output image
+---------------- scale: (default: 1.0) scale of output image
 
----|-- constant: (default none) set a constant size for output image
+---------------- constant: (default none) set a constant size for output image
 
----|-- suffix: (default: none) suffix for renaming related to size (e.g. @2x)
+---------------- suffix: (default: none) suffix for renaming related to size (e.g. @2x)
 
----|-- sizeDirectory: (default: none) e.g. mdpi
+---------------- sizeDirectory: (default: none) e.g. mdpi
 
 
 iconTypes: {}
