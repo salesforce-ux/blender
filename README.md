@@ -9,9 +9,8 @@ You can use _blender_ either via command line or as a node library.
 
 ### Command line
 
-	npm install -g blender
-
-	ulimit -n 2048
+	$ npm install -g blender
+	$ ulimit -n 2048
 
 To convert assets:
 
@@ -20,6 +19,7 @@ To convert assets:
 ### Library
 
 	$ npm install blender --save-dev
+	$ ulimit -n 2048
 
 Example:
 
@@ -110,13 +110,13 @@ This will create the following icons and folder structure:
 
 config: { formats, iconTypes }
 
-formats: { name, *ignoreTypeSuffix, sizes }
+formats: [ { name, *ignoreTypeSuffix, sizes } ]
 
 -------- name: e.g. ios
 
 -------- ignoreSuffixType: (default: false) if true, output icon names will not include typeSuffix
 
--------- sizes: { *scale, *constant, *suffix, *sizeDirectory }
+-------- sizes: [ { *scale, *constant, *suffix, *sizeDirectory } ]
 
 ---------------- scale: (default: 1.0) scale of output image
 
@@ -126,8 +126,19 @@ formats: { name, *ignoreTypeSuffix, sizes }
 
 ---------------- sizeDirectory: (default: none) e.g. mdpi
 
+***
 
-iconTypes: {}
+iconTypes: [ { name, unitSize, longestDimension, src, *suffix } ]
+
+-------- name: e.g. utility
+
+-------- unitSize: base output size for this type of icon
+
+-------- longestDimension: max. dimension of the icon
+
+-------- src: source directory for this type of icon
+
+-------- suffix: (default: none) suffix related to icon type, will be added to output names
 
 
 
