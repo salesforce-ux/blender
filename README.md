@@ -32,16 +32,14 @@ Example:
 	      "sizes": [
 	        { "sizeDirectory" : "mdpi", "scale": 1 },
 	        { "sizeDirectory" : "hdpi",   "scale": 1.5 }
-	      ], 
-	      "ignoreTypeSuffix": false
+	      ]
 	    },
 	    {
 	      "name": "ios",
 	      "sizes": [
 	        { "scale": 1 },
 	        { "scale": 2, "suffix": "@2x" }
-	      ],
-	      "ignoreTypeSuffix": false
+	      ]
 	    },
 	    {
 	      "name": "api",
@@ -78,11 +76,11 @@ This will create the following icons and folder structure:
 					icon_D.png
 			--custom
 				--mdpi
-					icon_list_C.png
-					icon_anchor_C.png
+					icon_C_list.png
+					icon_C_anchor.png
 				--mdpi
-					icon_list_C.png
-					icon_anchor_C.png
+					icon_C_list.png
+					icon_C_anchor.png
 		--ios
 			--utility
 				icon_U.png
@@ -103,6 +101,20 @@ This will create the following icons and folder structure:
 				icon_D_60.png
 				icon_D_120.png
 			--custom
+				icon_C_60.png
+				icon_C_120.png
+
+###About the config JSON object:
+
+config: {formats: [array_of_formats], iconTypes: [array_of_icon_types]}
+
+formats:
+-- name: name of format (e.g. ios)
+-- * ignoreTypeSuffix: default: false; if true, output icon names will not include typeSuffix
+-- sizes: [
+------------- * sizeDirectory: name of size directory (e.g. mdpi)
+------------- * scale: default: 1; scale of output image ()
+--        ]
 
 
 
