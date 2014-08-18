@@ -1,0 +1,22 @@
+{ 
+  "formats": [
+    {
+      "name": "android",
+      "sizes": [
+        { "sizeDirectory" : "xhdpi",  "scale": 2 }
+      ], 
+      "ignoreTypeSuffix": false
+    },
+    {
+      "name": "api",
+      "sizes": [
+        { "constant": 60, "suffix": "_60" }
+      ], 
+      "ignoreTypeSuffix": true
+    }
+  ],
+  "iconTypes": [
+    { "name": "utility",   "unitSize": 18, "longestDimension": 64,  "src": "./test/icons/utility"},
+    { "name": "standard",  "suffix": "_list",    "unitSize": 32, "longestDimension": 120, "src": "./test/icons/standard/svg"}
+  ]
+}
