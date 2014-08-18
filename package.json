@@ -1,7 +1,7 @@
 {
   "name": "blender",
   "version": "0.0.1",
-  "description": "SVG 2 PNG asset conversion.",
+  "description": "SVG 2 PNG asset conversion and file structure reorganization.",
   "keywords": [
     "svg",
     "png"
@@ -10,7 +10,7 @@
   "license": "BSD 2-Clause",
   "main": "./lib/blender",
   "bin": {
-    "theo": "./bin/blender"
+    "blender": "./bin/blender"
   },
   "engines": {
     "node": "0.10.21"
@@ -23,8 +23,10 @@
   "devDependencies": {
     "assert": "^1.1.1",
     "gulp": "^3.8.7",
-    "gulp-jasmine": "^1.0.0",
+    "gulp-mocha": "^1.0.0",
+    "gulp-rimraf": "^0.1.0",
     "gulp-util": "^3.0.0",
+    "rimraf": "^2.2.8",
     "should": "^4.0.4",
     "svg2png": "^1.1.0"
   }
