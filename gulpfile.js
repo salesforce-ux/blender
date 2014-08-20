@@ -16,7 +16,11 @@ gulp.task('tdd', function() {
 });
 
 gulp.task('clean-test', function(done) {
-	return rimraf('test/output', done)
+	return rimraf('test/output', done);
+});
+
+gulp.task('clean-output', function(done) {
+	return rimraf('./output', done);
 });
 
 gulp.task('test', ['clean-test'], function() {

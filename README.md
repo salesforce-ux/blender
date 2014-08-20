@@ -14,7 +14,20 @@ You can use _blender_ either via command line or as a node library.
 
 To convert assets:
 
-	blender ./path_to_output_folder ./relative_path_to_config.json
+	blender input output --config --size [platform(s)]
+
+	example uses: 
+		blender ./input/svg ./output --config ./config.json --size 30 android api
+		blender ./input/svg ./output --config ./config.json all
+		blender ./input/svg ./output --size 30 
+
+### Command Line Documentation
+	
+	input: 				relative path to folder
+	output: 			relative path to folder, will create if does not exist
+	--config: 		relative path to config file [optional, default: ./config.json]
+	--size: 			desired 1X size of generated PNG (e.g. --size 18 would yield a png of longest dimension 36 with scale factor of 2) [optional, default: 18]
+	platforms:		space delimited list of standardized platforms to generate png's for [optional, default: all]
 
 ### Library
 
@@ -49,66 +62,18 @@ Example:
 	      ], 
 	      "ignoreTypeSuffix": true
 	    }
-	  ],
-	  "iconTypes": [
-	    { "name": "utility",   "unitSize": 18, "longestDimension": 64,  "src": "./test/icons/utility"},
-	    { "name": "doctype",   "unitSize": 18, "longestDimension": 64,  "src": "./test/icons/doctype"},
-	    { "name": "custom",    "suffix": "_anchor",  "unitSize": 48, "longestDimension": 120, "src": "./test/icons/custom"},
-	    { "name": "custom",    "suffix": "_list",    "unitSize": 32, "longestDimension": 120, "src": "./test/icons/custom"},
 	  ]
 	}
 
-	blender("./output", config);
+	blender.convert("./input/svg", "./output", config, 18, 'all', function() {
+		console.log('done');
+	});
 
-This will create the following icons and folder structure:
-
-	--output
-		--android
-			--utility
-				--mdpi
-					icon_U.png
-				--hdpi
-					icon_U.png
-			--doctype
-				--mdpi
-					icon_D.png
-				--hdpi
-					icon_D.png
-			--custom
-				--mdpi
-					icon_C_list.png
-					icon_C_anchor.png
-				--mdpi
-					icon_C_list.png
-					icon_C_anchor.png
-		--ios
-			--utility
-				icon_U.png
-				icon_U@2x.png
-			--doctype
-				icon_D.png
-				icon_D@2x.png
-			--custom
-				icon_list_C.png
-				icon_anchor_C.png
-				icon_list_C@2x.png
-				icon_anchor_C@2x.png
-		--api
-			--utility
-				icon_U_60.png
-				icon_U_120.png
-			--doctype
-				icon_D_60.png
-				icon_D_120.png
-			--custom
-				icon_C_60.png
-				icon_C_120.png
-
-###About the config JSON object:
+### About the config JSON object:
 
 * = optional input
 
-config: { formats, iconTypes }
+config: { formats }
 
 formats: [ { name, *ignoreTypeSuffix, sizes } ]
 
@@ -125,22 +90,6 @@ formats: [ { name, *ignoreTypeSuffix, sizes } ]
 ---------------- suffix: (default: none) suffix for renaming related to size (e.g. @2x)
 
 ---------------- sizeDirectory: (default: none) e.g. mdpi
-
-***
-
-iconTypes: [ { name, unitSize, longestDimension, src, *suffix } ]
-
--------- name: e.g. utility
-
--------- unitSize: base output size for this type of icon
-
--------- longestDimension: max. dimension of the icon
-
--------- src: source directory for this type of icon
-
--------- suffix: (default: none) suffix related to icon type, will be added to output names
-
-
 
 
 ## License

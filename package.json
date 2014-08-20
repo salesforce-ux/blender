@@ -26,8 +26,10 @@
     "gulp-mocha": "^1.0.0",
     "gulp-rimraf": "^0.1.0",
     "gulp-util": "^3.0.0",
+    "minimist": "^1.1.0",
     "rimraf": "^2.2.8",
     "should": "^4.0.4",
-    "svg2png": "^1.1.0"
+    "svg2png": "^1.1.0",
+    "xml2js": "^0.4.4"
   }
 }

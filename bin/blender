@@ -17,18 +17,16 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 var path = require('path');
 var fs = require('fs');
 var lib = path.join(path.dirname(fs.realpathSync(__filename)), '../lib');
-var lib = require(lib + '/blender.js');
+var blender = require(lib + '/blender.js');
+var argv = require('minimist')(process.argv.slice(2));
 
 
+var input = argv['_'][0];
+var output = argv['_'][1];
 
-if(process.argv.length !== 4){
-  	console.error('blender needs 2 parameters: destDir, config');
-}else{
-	var raw = fs.readFileSync(process.argv[3]);
+argv['_'] = argv['_'].slice(2);
+var config = argv.config ? JSON.parse(fs.readFileSync(argv.config)) : undefined;
+var oneX = argv.size;
+var platform = argv['_'].length === 0 ? undefined : argv['_'];
 
-	var config = JSON.parse(raw);
-
-	console.log(config);
-
-	lib.blender(process.argv[2], config);
-}
+blender.convert(input, output, config, oneX, platform);

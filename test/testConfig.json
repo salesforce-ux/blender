@@ -13,10 +13,14 @@
         { "constant": 60, "suffix": "_60" }
       ], 
       "ignoreTypeSuffix": true
+    },
+    {
+      "name": "ios",
+      "sizes": [
+        { "scale": 1 },
+        { "scale": 2, "suffix": "@2x" }
+      ],
+      "ignoreTypeSuffix": false
     }
-  ],
-  "iconTypes": [
-    { "name": "utility",   "unitSize": 18, "longestDimension": 64,  "src": "./test/icons/utility"},
-    { "name": "standard",  "suffix": "_list",    "unitSize": 32, "longestDimension": 120, "src": "./test/icons/standard/svg"}
   ]
 }

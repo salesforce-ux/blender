@@ -26,14 +26,5 @@
       ],
       "ignoreTypeSuffix": false
     }
-  ],
-  "iconTypes": [
-    { "name": "utility",   "unitSize": 18, "longestDimension": 64,  "src": "./test/icons/utility"},
-    { "name": "doctype",   "unitSize": 18, "longestDimension": 64,  "src": "./test/icons/doctype"},
-    { "name": "action",    "unitSize": 18, "longestDimension": 36,  "src": "./test/icons/actions"},
-    { "name": "custom",    "suffix": "_anchor",  "unitSize": 48, "longestDimension": 120, "src": "./test/icons/custom"},
-    { "name": "standard",  "suffix": "_anchor",  "unitSize": 48, "longestDimension": 120, "src": "./test/icons/standard/svg"},
-    { "name": "custom",    "suffix": "_list",    "unitSize": 32, "longestDimension": 120, "src": "./test/icons/custom"},
-    { "name": "standard",  "suffix": "_list",    "unitSize": 32, "longestDimension": 120, "src": "./test/icons/standard/svg"}
   ]
 }
