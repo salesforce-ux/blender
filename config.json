@@ -1,0 +1,39 @@
+{ 
+  "formats": [
+    {
+      "name": "android",
+      "sizes": [
+        { "sizeDirectory" : "mdpi", "scale": 1 },
+        { "sizeDirectory" : "hdpi",   "scale": 1.5 },
+        { "sizeDirectory" : "xhdpi",  "scale": 2 },
+        { "sizeDirectory" : "xxdpi",  "scale": 3 }
+      ], 
+      "ignoreTypeSuffix": false
+    },
+    {
+      "name": "api",
+      "sizes": [
+        { "constant": 60, "suffix": "_60" },
+        { "constant": 120, "suffix": "_120"}
+      ], 
+      "ignoreTypeSuffix": true
+    },
+    {
+      "name": "ios",
+      "sizes": [
+        { "scale": 1 },
+        { "scale": 2, "suffix": "@2x" }
+      ],
+      "ignoreTypeSuffix": false
+    }
+  ],
+  "iconTypes": [
+    { "name": "utility",   "unitSize": 18, "longestDimension": 64,  "src": "./test/icons/utility"},
+    { "name": "doctype",   "unitSize": 18, "longestDimension": 64,  "src": "./test/icons/doctype"},
+    { "name": "action",    "unitSize": 18, "longestDimension": 36,  "src": "./test/icons/actions"},
+    { "name": "custom",    "suffix": "_anchor",  "unitSize": 48, "longestDimension": 120, "src": "./test/icons/custom"},
+    { "name": "standard",  "suffix": "_anchor",  "unitSize": 48, "longestDimension": 120, "src": "./test/icons/standard/svg"},
+    { "name": "custom",    "suffix": "_list",    "unitSize": 32, "longestDimension": 120, "src": "./test/icons/custom"},
+    { "name": "standard",  "suffix": "_list",    "unitSize": 32, "longestDimension": 120, "src": "./test/icons/standard/svg"}
+  ]
+}
