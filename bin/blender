@@ -25,8 +25,12 @@ var input = argv['_'][0];
 var output = argv['_'][1];
 
 argv['_'] = argv['_'].slice(2);
-var config = argv.config ? JSON.parse(fs.readFileSync(argv.config)) : undefined;
+var config = argv.config;
 var oneX = argv.size;
 var platform = argv['_'].length === 0 ? undefined : argv['_'];
 
-blender.convert(input, output, config, oneX, platform);
+if (!fs.existsSync(input)) {
+	console.log('invalid input folder, must denote a relative path from current working directory')
+} else {
+	blender.convert(input, output, config, oneX, platform);
+}
