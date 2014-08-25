@@ -1,0 +1,30 @@
+{ 
+  "formats": [
+    {
+      "name": "android",
+      "sizes": [
+        { "sizeDirectory" : "mdpi", "scale": 1 },
+        { "sizeDirectory" : "hdpi",   "scale": 1.5 },
+        { "sizeDirectory" : "xhdpi",  "scale": 2 },
+        { "sizeDirectory" : "xxdpi",  "scale": 3 }
+      ], 
+      "ignoreTypeSuffix": false
+    },
+    {
+      "name": "api",
+      "sizes": [
+        { "constant": 60, "suffix": "_60" },
+        { "constant": 120, "suffix": "_120"}
+      ], 
+      "ignoreTypeSuffix": true
+    },
+    {
+      "name": "ios",
+      "sizes": [
+        { "scale": 1 },
+        { "scale": 2, "suffix": "@2x" }
+      ],
+      "ignoreTypeSuffix": false
+    }
+  ]
+}

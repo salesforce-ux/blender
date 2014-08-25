@@ -1,0 +1,26 @@
+{ 
+  "formats": [
+    {
+      "name": "android",
+      "sizes": [
+        { "sizeDirectory" : "xhdpi",  "scale": 2 }
+      ], 
+      "ignoreTypeSuffix": false
+    },
+    {
+      "name": "api",
+      "sizes": [
+        { "constant": 60, "suffix": "_60" }
+      ], 
+      "ignoreTypeSuffix": true
+    },
+    {
+      "name": "ios",
+      "sizes": [
+        { "scale": 1 },
+        { "scale": 2, "suffix": "@2x" }
+      ],
+      "ignoreTypeSuffix": false
+    }
+  ]
+}

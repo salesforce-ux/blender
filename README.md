@@ -1,6 +1,97 @@
 blender
 ========
 
+Blender is tool for converting media assets from svg format to png format in a specified array of sizes. This module is perfect for genreating icons to be used on a variety of screen sizes. Output folder structure, output sizes, icon types, and output icon names can be configured via a JSON object input.
+
+## Usage
+
+You can use _blender_ either via command line or as a node library.
+
+### Command line
+
+	$ npm install -g blender
+	$ ulimit -n 2048
+
+To convert assets:
+
+	blender input output --config --size [platform(s)]
+
+	example uses: 
+		blender ./input/svg ./output --config ./config.json --size 30 android api
+		blender ./input/svg ./output --config ./config.json all
+		blender ./input/svg ./output --size 30 
+
+### Command Line Documentation
+	
+	input: 				relative path to folder
+	output: 			relative path to folder, will create if does not exist
+	--config: 		relative path to config file [optional, default: ./config.json]
+	--size: 			desired 1X size of generated PNG (e.g. --size 18 would yield a png of longest dimension 36 with scale factor of 2) [optional, default: 18]
+	platforms:		space delimited list of standardized platforms to generate png's for [optional, default: all]
+
+### Library
+
+	$ npm install blender --save-dev
+	$ ulimit -n 2048
+
+Example:
+
+	blender = require 'blender'
+
+	var config = { 
+	  "formats": [
+	    {
+	      "name": "android",
+	      "sizes": [
+	        { "sizeDirectory" : "mdpi", "scale": 1 },
+	        { "sizeDirectory" : "hdpi",   "scale": 1.5 }
+	      ]
+	    },
+	    {
+	      "name": "ios",
+	      "sizes": [
+	        { "scale": 1 },
+	        { "scale": 2, "suffix": "@2x" }
+	      ]
+	    },
+	    {
+	      "name": "api",
+	      "sizes": [
+	        { "constant": 60, "suffix": "_60" },
+	        { "constant": 120, "suffix": "_120"}
+	      ], 
+	      "ignoreTypeSuffix": true
+	    }
+	  ]
+	}
+
+	blender.convert("./input/svg", "./output", config, 18, 'all', function() {
+		console.log('done');
+	});
+
+### About the config JSON object:
+
+* = optional input
+
+config: { formats }
+
+formats: [ { name, *ignoreTypeSuffix, sizes } ]
+
+-------- name: e.g. ios
+
+-------- ignoreSuffixType: (default: false) if true, output icon names will not include typeSuffix
+
+-------- sizes: [ { *scale, *constant, *suffix, *sizeDirectory } ]
+
+---------------- scale: (default: 1.0) scale of output image
+
+---------------- constant: (default none) set a constant size for output image
+
+---------------- suffix: (default: none) suffix for renaming related to size (e.g. @2x)
+
+---------------- sizeDirectory: (default: none) e.g. mdpi
+
+
 ## License
 
 Copyright (c) 2014, salesforce.com, inc. All rights reserved.
