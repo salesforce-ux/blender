@@ -20,7 +20,9 @@
     "url": "https://github.com/salesforce-ux/blender.git"
   },
   "dependencies": {
-    "svg2png": "^1.1.0"
+    "svg2png": "^1.1.0",
+    "minimist": "^1.1.0",
+    "xml2js": "^0.4.4"
   },
   "devDependencies": {
     "assert": "^1.1.1",
