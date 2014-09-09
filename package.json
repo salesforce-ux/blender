@@ -13,7 +13,7 @@
     "blender": "./bin/blender"
   },
   "engines": {
-    "node": "0.10.21"
+    "node": ">= 0.8.0"
   },
   "repository": {
     "type": "git",
