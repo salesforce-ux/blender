@@ -1,6 +1,6 @@
 {
   "name": "blender",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "SVG 2 PNG asset conversion and file structure reorganization.",
   "keywords": [
     "svg",
@@ -20,7 +20,8 @@
     "url": "https://github.com/salesforce-ux/blender.git"
   },
   "dependencies": {
-    "svg2png": "^1.1.0"
+    "svg2png": "^1.1.0",
+    "xml2js": "^0.4.4"
   },
   "devDependencies": {
     "assert": "^1.1.1",
@@ -31,7 +32,6 @@
     "minimist": "^1.1.0",
     "rimraf": "^2.2.8",
     "should": "^4.0.4",
-    "svg2png": "^1.1.0",
-    "xml2js": "^0.4.4"
+    "svg2png": "^1.1.0"
   }
 }
