@@ -10,7 +10,8 @@
     {
       "name": "api",
       "sizes": [
-        { "constant": 60, "suffix": "_60" }
+        { "constant": 60, "suffix": "_60" },
+        { "constant": 120, "suffix": "_120"}
       ], 
       "ignoreTypeSuffix": true
     },

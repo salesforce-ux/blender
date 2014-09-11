@@ -29,7 +29,7 @@ config.formats.forEach(function(format) {
 describe('====== Running blender(\'\.\/test\/output\') ======\n', function() {
 	this.timeout(500000);
 	it('should create the appropriate folder structure', function(done) {
-		blender.convert('./test/icons/utility', './test/output', './test/testConfig.json', 18, ['android', 'api', 'ios'], function() {
+		blender.convert('./test/icons/standard/svg', './test/output', './test/testConfig.json', 18, ['android', 'api', 'ios'], function() {
 			assert.equal(fs.existsSync(__dirname + '/output'), true);
 			config.formats.forEach(function(format) {
 				assert.equal(fs.existsSync(__dirname + '/output/' + format.name), true);

@@ -1,0 +1,42 @@
+{
+  "name": "svg-scaler",
+  "version": "0.1.5",
+  "description": "help convert svg to png",
+  "main": "index.js",
+  "dependencies": {
+    "event-stream": "^3.1.5",
+    "q": "^1.0.1",
+    "sax": "^0.6.0",
+    "svgo": "^0.4.4",
+    "svgpath": "^1.0.5"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-svg2png": "^0.2.1",
+    "mocha": "^1.20.1",
+    "vinyl-fs": "^0.2.1"
+  },
+  "scripts": {
+    "test": "mocha ./test/*.spec.js -R spec"
+  },
+  "author": {
+    "name": "morlay"
+  },
+  "license": "WTFPL",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/morlay/svg-scaler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/morlay/svg-scaler/issues"
+  },
+  "homepage": "https://github.com/morlay/svg-scaler",
+  "readme": "## SVG Scaler\n\n[![Build Status](https://travis-ci.org/morlay/svg-scaler.svg?branch=master)](https://travis-ci.org/morlay/svg-scaler)\n[![Dependencies](https://david-dm.org/morlay/svg-scaler.png)](https://david-dm.org/morlay/svg-scaler)\n\nScale svg size；\n\n## Usage\n\n`npm install svg-scaler`\n\nands\n\n     var svgscaler = require('svg-scaler');\n\n     gulp.src('src/*.svg')\n         .pipe(svgscaler({ width: number })) // options\n         .pipe(gulp.dest('./dest/svg/'))\n\n## options\n\n### `noSvgo`\n\n`type:boolean`, default is `false`, if you want remain more detail, please set it `true`;\n\n### `width`\n\n`type:number`, will make the svg scale to the size by the number, will fix to square, unity all svg files to same size.\n\n### scale\n\n`type:number`, just normal `scale`, but if have the width or the height option, the `scale` will not work.\n\n## Warning\n\n* not support image in svg.\n* because use phantom, so need some special configuration. please see the `Gruntfile`, same for gulp.\n\n## Thanks\n\n* https://github.com/fontello/svgpath\n* https://github.com/isaacs/sax-js\n* https://github.com/svg/svgo\n\n* Test icons from https://dribbble.com/shots/1511236-Champicons-icons-of-champions-FREE-AI",
+  "readmeFilename": "README.md",
+  "_id": "svg-scaler@0.1.5",
+  "_shasum": "d7068cec7f23d2acca7e9cae38fd55818529a6ac",
+  "_from": "svg-scaler@",
+  "_resolved": "https://registry.npmjs.org/svg-scaler/-/svg-scaler-0.1.5.tgz"
+}
