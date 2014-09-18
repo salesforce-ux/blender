@@ -6,7 +6,8 @@
         { "sizeDirectory" : "mdpi", "scale": 1 },
         { "sizeDirectory" : "hdpi",   "scale": 1.5 },
         { "sizeDirectory" : "xhdpi",  "scale": 2 },
-        { "sizeDirectory" : "xxdpi",  "scale": 3 }
+        { "sizeDirectory" : "xxdpi",  "scale": 3 },
+        { "sizeDirectory" : "xxxdpi",  "scale": 4 }
       ], 
       "ignoreTypeSuffix": false
     },
@@ -22,7 +23,8 @@
       "name": "ios",
       "sizes": [
         { "scale": 1 },
-        { "scale": 2, "suffix": "@2x" }
+        { "scale": 2, "suffix": "@2x" },
+        { "scale": 3, "suffix": "@3x" }
       ],
       "ignoreTypeSuffix": false
     }
