@@ -14,19 +14,21 @@ You can use _blender_ either via command line or as a node library.
 
 To convert assets:
 
-	blender input output --config --size [platform(s)]
+	blender input output --config --size --method [platform(s)]
 
-	example uses: 
-		blender ./input/svg ./output --config ./config.json --size 30 android api
+	example uses:
+		blender ./input/svg ./output --config ./config.json --size 30 --method height android api
 		blender ./input/svg ./output --config ./config.json all
-		blender ./input/svg ./output --size 30 
+		blender ./input/svg ./output --size 30
 
 ### Command Line Documentation
-	
+
 	input: 				relative path to folder
 	output: 			relative path to folder, will create if does not exist
 	--config: 		relative path to config file [optional, default: ./config.json]
-	--size: 			desired 1X size of generated PNG (e.g. --size 18 would yield a png of longest dimension 36 with scale factor of 2) [optional, default: 18]
+	--size: 			desired 1X size of generated PNG (e.g. --size 18 would yield a png of longest dimension 36 with scale
+	factor of 2) [optional, default: 18]
+	--method:			how to scale the image (e.g. width, height, auto [longest dimension])
 	platforms:		space delimited list of standardized platforms to generate png's for [optional, default: all]
 
 ### Library
@@ -38,7 +40,7 @@ Example:
 
 	blender = require 'blender'
 
-	var config = { 
+	var config = {
 	  "formats": [
 	    {
 	      "name": "android",
@@ -59,7 +61,7 @@ Example:
 	      "sizes": [
 	        { "constant": 60, "suffix": "_60" },
 	        { "constant": 120, "suffix": "_120"}
-	      ], 
+	      ],
 	      "ignoreTypeSuffix": true
 	    }
 	  ]
