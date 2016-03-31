@@ -26,7 +26,7 @@ To convert assets:
 	input: 				relative path to folder
 	output: 			relative path to folder, will create if does not exist
 	--config: 		relative path to config file [optional, default: ./config.json]
-	--size: 			desired 1X size of generated PNG (e.g. --size 18 would yield a png of longest dimension 36 with scale
+	--size: 			desired 1X size of generated PNG (e.g. --size 18 would yield a png of dimension 36 with scale
 	factor of 2) [optional, default: 18]
 	--method:			how to scale the image (e.g. width, height, auto [longest dimension])
 	platforms:		space delimited list of standardized platforms to generate png's for [optional, default: all]
