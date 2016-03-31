@@ -26,7 +26,7 @@ var output = argv['_'][1];
 
 argv['_'] = argv['_'].slice(2);
 var config = argv.config;
-var baseSize = argv.baseSize;
+var baseSize = argv.size;
 var method = argv.method;
 var platform = argv['_'].length === 0 ? undefined : argv['_'];
 

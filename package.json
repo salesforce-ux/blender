@@ -1,6 +1,6 @@
 {
   "name": "blender",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "SVG 2 PNG asset conversion and file structure reorganization.",
   "keywords": [
     "svg",
