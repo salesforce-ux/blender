@@ -1,6 +1,8 @@
 blender
 ========
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/salesforce-ux/blender.svg)](https://greenkeeper.io/)
+
 Blender is tool for converting media assets from svg format to png format in a specified array of sizes. This module is perfect for genreating icons to be used on a variety of screen sizes. Output folder structure, output sizes, icon types, and output icon names can be configured via a JSON object input.
 
 ## Usage
